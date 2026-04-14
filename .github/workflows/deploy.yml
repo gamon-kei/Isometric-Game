@@ -26,12 +26,12 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: Build Wasm Distribution
-        run: ./gradlew wasmJsBrowserDistribution
+        run: ./gradlew :composeApp:wasmJsBrowserDevelopmentRun
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build/dist/wasmJs/productionExecutable
+          path: composeApp/build/dist/wasmJs/productionExecutable
 
       - name: Deploy to GitHub Pages
         id: deployment
